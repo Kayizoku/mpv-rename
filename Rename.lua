@@ -37,7 +37,7 @@ mp.add_key_binding("F2", "rename-file", function()
     input.cancel_user_input()
     input.get_user_input(rename, {
         text = "Enter new filename:",
-        default_input = "filename",
+        default_input = filename, -- remove or make a an empty string if you want input field to be empty
         replace = false,
     })
 end)
