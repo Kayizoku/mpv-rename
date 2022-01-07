@@ -13,7 +13,7 @@ After you’ve added in mpv-user-input in the corresponding places. Simply place
 ## In-use
 You can rename any files directly from MPV. The hotkey is set to `F2` on the current file in focus. Once that's pressed, a inputfield will show under the screen and the initial filename will be written out. You can edit the original name or remove it completely and rename it. It's worth noting: renaming won't affect the extension and adding another say `.mp4` will simply duplicate it if it already exisists. Pressing `ENTER` after new filename is written will reload the file and fetch the new name. Playlist will be reloaded as well and remove the original file to avoid duplication. To cancel an on-going rename request simply press `ESC` either while inputfield is empty or contains a value. 
 
-**NB:** If you want the inputfield to remain empty when you decide to rename. You can simply remove `default_input` options value or have it set to an empty string "".
+**NB:** If you want the inputfield to remain empty while renaming. You can simply remove `default_input` options value or have it set to an empty string "".
 
 ## Hotkey
 Don’t like the normal hot-key? No problem. If you put in `<key-binding> script-binding rename-file` in your `input.conf`. It will allow you to use your own custom keybind.
