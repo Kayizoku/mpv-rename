@@ -1,4 +1,4 @@
-# MPV
+# mpv-rename
 
 ## Rename
 This script makes it possible to rename files on the go directly within MPV player window without having to leave it for a second. 
