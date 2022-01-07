@@ -4,7 +4,7 @@
 This script makes it possible to rename files on the go directly within MPV player window without having to leave it for a second. 
 
 ## Installation
-This script needs the user-input-module to work. You can get that from here: https://github.com/CogentRedTester/mpv-user-input/. Follow the appropriate steps.
+This script needs the [user-input-module](https://github.com/CogentRedTester/mpv-user-input/). Follow the appropriate steps.
 Once thats's done, like any other script. Simply place "rename.lua" inside ~~/scripts/ directory. Create the folder if it dosen't exist. 
 
 
