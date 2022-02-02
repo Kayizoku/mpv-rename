@@ -12,8 +12,8 @@ local function rename(text, error)
     if filepath == nil then return end
 
     local directory, filename = utils.split_path(filepath)
-    local name, extension = filename:match("^(.*)%.([^%./]+)$")
-    local newfilepath = directory..text..'.'..extension
+    local name, extension = filename:match("(%a*)%.([^%./]+)$")
+    local newfilepath = directory..text
 
     msg.info( string.format("renaming '%s.%s' to '%s.%s'", name, extension, text, extension) )
     local success, error = os.rename(filepath, newfilepath)
@@ -37,7 +37,7 @@ mp.add_key_binding("F2", "rename-file", function()
     input.cancel_user_input()
     input.get_user_input(rename, {
         text = "Enter new filename:",
-        default_input = filename, -- remove or make a an empty string if you want input field to be empty
+        default_input = filename,
         replace = false,
     })
 end)
