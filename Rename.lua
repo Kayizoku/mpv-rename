@@ -39,7 +39,7 @@ mp.add_key_binding("F2", "rename-file", function()
         text = "Enter new filename:",
         default_input = filename,
         replace = false,
-        cursor_pos = filename:find(".%w+$")
+        cursor_pos = filename:find("%.%w+$")
     })
 end)
 
