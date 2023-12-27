@@ -1,3 +1,6 @@
+--	Rename.lua
+--	Link: https://github.com/Kayizoku/mpv-rename
+
 local mp = require "mp"
 local msg = require "mp.msg"
 local utils = require "mp.utils"
