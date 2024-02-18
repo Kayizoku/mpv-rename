@@ -16,8 +16,12 @@ local function rename(text, error)
     local newfilepath = directory..text
 
     msg.info( string.format("renaming '%s.%s' to '%s'", name, extension, text) )
-    local success, error = os.rename(filepath, newfilepath)
-    if not success then msg.error(error) end
+    local success, rename_error = os.rename(filepath, newfilepath)
+    if not success then
+        msg.error(rename_error)
+	mp.osd_message("rename failed")
+        return
+    end
 
     -- adding the new path to the playlist, and restarting the file with the correct path
     mp.commandv("loadfile", newfilepath, "append")
