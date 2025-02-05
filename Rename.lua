@@ -1,4 +1,4 @@
--- Author: Kayizoku - Improved Version without Dry-Run Mode
+-- Author: Kayizoku 
 local mp = require "mp"
 local msg = require "mp.msg"
 local utils = require "mp.utils"
