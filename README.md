@@ -1,4 +1,4 @@
-# File Renaming Script for MPV
+# MPV-Rename
 
 This script provides a powerful way to rename files directly within MPV, featuring single file renaming, batch renaming, and an advanced undo feature that lets you revert multiple renaming actions. Whether you're organizing media files or renaming large batches, this script allows you to manage your file names quickly, efficiently, and safely.
 
