@@ -1,29 +1,31 @@
-# mpv-rename
+# File Renaming Script for MPV
 
-## Rename
-This script makes it possible to rename files on the go directly within MPV player window without having to leave it for a second. 
+This script provides a powerful way to rename files directly within MPV, featuring single file renaming, batch renaming, and an advanced undo feature that lets you revert multiple renaming actions. Whether you're organizing media files or renaming large batches, this script allows you to manage your file names quickly, efficiently, and safely.
 
-## Installation
-This script needs the [user-input-module](https://github.com/CogentRedTester/mpv-user-input/). Follow the appropriate steps.
-Once thats's done, like any other script. 
+## Key Features:
+- **Single File Renaming**: Quickly rename the current file with a custom name. A prompt will ask for a new filename, and the file will be renamed immediately.
+- **Undo Rename**: The script supports multiple undo operations. You can press **U** to undo the last renaming operation and keep pressing it to continue undoing previous renames in reverse order. The rename history is stored, and each renaming action can be reverted step by step until you run out of history.
+- **Batch Renaming**: Use patterns and replacements to rename multiple files at once. The script will apply the specified pattern and replacement to all matching files in the directory.
+- **Rename History**: Keeps a stack of previously renamed files, enabling you to undo each renaming action individually. The history is persistent for each session until the script is reloaded or MPV is closed.
+- **Log File**: Every renaming operation is logged in a `rename_log.txt` file, giving you a detailed record of all file renamings, including timestamps.
 
-Simply place `rename.lua` inside ~~/scripts/ directory. Create the folder if it dosen't exist. 
+## Key Bindings:
+- **F2**: Renames the current file. A prompt will appear for entering a new filename.
+- **Shift+F2**: Triggers batch renaming. You can enter a pattern to match and a replacement text. The script will apply this to all matching files in the directory.
+- **U**: Undoes the last renaming action. Press it multiple times to undo each previous renaming step in the order they were applied. The history of renamed files is maintained, so you can undo any recent rename, one by one, until all are reverted or the history is exhausted.
 
-This script has only been tested for Windows, but should work on Linux.
+## How to Use:
+1. **Install the Script**: Place the script in the `scripts` folder of your MPV configuration directory.
+2. **Key Bindings**: The script comes with default key bindings:
+   - **F2** to rename the current file.
+   - **Shift+F2** to trigger batch renaming.
+   - **U** to undo the last renaming action.
+   You can customize these bindings within the script if desired.
+3. **Batch Rename**: Press `Shift+F2` to start the batch renaming process. The script will ask for a pattern to match in the filenames and the replacement text. After confirming, you can apply the renaming to all matching files in the directory.
+4. **Undo Renaming**: Press **U** to undo the most recent renaming. If you need to revert additional renames, continue pressing **U**, and the script will undo each rename operation in reverse order, allowing you to step back through the renaming history. You can keep pressing **U** until you reach the beginning of the history or until all renaming operations are undone.
 
-## In-use
-You can rename any files directly from MPV. The hotkey is set to `F2` on the current file in focus. Once that's pressed, a inputfield will show under the screen and the current filename will be displayed. You can edit the original name or remove it completely and rename it. Playlist will be reloaded as well and remove the original file to avoid duplication.
+## Requirements:
+- **MPV** with Lua scripting enabled.
+- **user-input-module** to handle interactive user prompts.
 
-To cancel an on-going rename request simply press `ESC` either while inputfield is empty or contains a value.
-
-Script retains all functionality of mpv-user-input. So it remembers any changes and you can go throughy them by pressing `ARROW_KEY_UP` and look at the all the renaming that has been done.
-
-You can undo a renamed file if you accidentally typed incorrectly. Press capital "U" after renaming a file, it will refresh player with the previous name. 
-
-## Hotkey
-Don’t like the normal hot-key to rename? No problem. If you put in `<key-binding> script-binding rename-file` in your `input.conf`. It will allow you to use your own custom keybind.
-
-## Future Plans
-As of now, I have nothing planned for the future. The script is already functioning well but you never know. There is always room for improvement. So feel free to fork it and improve on it with your ideas and imagination.
-
-Feel free to drop any suggestions for improvements regardless. 
+This script is perfect for users who frequently need to rename files in MPV, offering both flexibility and safety. Whether you're renaming a single file or performing batch operations, the undo functionality ensures that your files are renamed exactly how you want them—without the risk of mistakes.
